@@ -1,0 +1,47 @@
+package model;
+
+public enum ItemNames {
+    // FACTORY ITEMS
+    METAL,
+    WOOD,
+    PLASTIC,
+    SEEDS,
+    MINERALS,
+    CHEMICALS,
+    TEXTILES,
+    SUGARANDSPICES,
+    GLASS,
+
+    // BUILDING SUPPLIES STORE
+    NAILS,
+    PLANKS,
+    BRICKS,
+    CEMENT,
+    GLUE,
+    PAINT,
+
+    // HARDWARE STORE
+    HAMMER,
+    MEASURINGTAPE,
+    SHOVEL,
+    COOKINGUTENSILS,
+
+    // FARMER'S MARKET
+    VEGETABLES,
+    FLOURBAG,
+    FRUITANDBERRIES,
+
+    // FURNITURE STORE
+    CHAIRS,
+    TABLES,
+
+    // GARDENING SUPPLIES
+    GRASS,
+    TREESAPLINGS,
+
+    // DONUT SHOP
+    DONUTS,
+
+    // FASHION STORE
+    CAP;
+}
