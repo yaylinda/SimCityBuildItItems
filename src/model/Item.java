@@ -2,28 +2,28 @@ package model;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Stream;
 
 public class Item {
 
-    private String name;
+    private ItemName name;
     private double time;
     private int sellPrice;
     private List<Item> ingredients;
     private Group group;
 
     public Item() {
-        this.name = "UNDEFINED";
         this.time = -1;
         this.sellPrice = -1;
         this.ingredients = new ArrayList<>();
         this.group = null;
     }
 
-    public String getName() {
+    public ItemName getName() {
         return name;
     }
 
-    public Item setName(String name) {
+    public Item setName(ItemName name) {
         this.name = name;
         return this;
     }
@@ -62,5 +62,23 @@ public class Item {
     public Item setGroup(Group group) {
         this.group = group;
         return this;
+    }
+
+    public Stream<Need> getItemTree(int depth) {
+        return Stream.concat(
+                Stream.of(new Need(this.getGroup(), this.getName(), depth)),
+                this.ingredients.stream().flatMap(i -> i.getItemTree(depth + 1))
+        );
+    }
+
+    @Override
+    public String toString() {
+        return "Item{" +
+                "name=" + name +
+                ", time=" + time +
+                ", sellPrice=" + sellPrice +
+                ", ingredients=" + ingredients +
+                ", group=" + group +
+                '}';
     }
 }

@@ -1,6 +1,6 @@
 package model;
 
-public enum ItemNames {
+public enum ItemName {
     // FACTORY ITEMS
     METAL,
     WOOD,
