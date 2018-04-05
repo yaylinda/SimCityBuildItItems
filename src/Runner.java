@@ -1,10 +1,9 @@
-import model.Item;
 import model.ItemName;
 import model.Need;
 import service.ItemService;
 
+import java.util.Arrays;
 import java.util.stream.Collectors;
-import java.util.stream.Stream;
 
 public class Runner {
 
@@ -12,8 +11,10 @@ public class Runner {
 
         ItemService itemService = new ItemService();
 
-        Stream<Need> needs = itemService.processItem(ItemName.CAP);
-        System.out.println(needs.collect(Collectors.toList()));
+        System.out.println(Arrays.stream(args).flatMap(a -> {
+            ItemName itemName = ItemName.valueOf(a.toUpperCase());
+            return itemService.processItem(itemName);
+        }).collect(Collectors.groupingBy(Need::getGroup)));
     }
 
 }

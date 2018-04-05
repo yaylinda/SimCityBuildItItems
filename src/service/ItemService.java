@@ -182,6 +182,14 @@ public class ItemService {
                 .setGroup(Group.HARDWARE_STORE);
         this.items.put(ItemName.COOKINGUTENSILS, cookingUtensils);
 
+        Item ladder = new Item()
+                .setName(ItemName.LADDER)
+                .setTime(54)
+                .setSellPrice(420)
+                .setIngredients(Arrays.asList(planks, planks, metal, metal))
+                .setGroup(Group.HARDWARE_STORE);
+        this.items.put(ItemName.LADDER, ladder);
+
 
         // FARMER'S MARKET
         Item vegetables = new Item()
@@ -257,7 +265,7 @@ public class ItemService {
         this.items.put(ItemName.CAP, cap);
 
 
-        // FARMER'S MARKET
+        // FARMER'S MARKET (2)
         Item fruitAndBerries = new Item()
                 .setName(ItemName.FRUITANDBERRIES)
                 .setTime(90)
@@ -266,5 +274,14 @@ public class ItemService {
                 .setGroup(Group.FARMERS_MARKET);
         this.items.put(ItemName.FRUITANDBERRIES, fruitAndBerries);
 
+
+        // DONUT SHOP (2)
+        Item greenSmoothie = new Item()
+                .setName(ItemName.GREENSMOOTHIE)
+                .setTime(30)
+                .setSellPrice(1150)
+                .setIngredients(Arrays.asList(vegetables, fruitAndBerries))
+                .setGroup(Group.DONUT_SHOP);
+        this.items.put(ItemName.GREENSMOOTHIE, greenSmoothie);
     }
 }

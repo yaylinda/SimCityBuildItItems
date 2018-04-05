@@ -25,6 +25,7 @@ public enum ItemName {
     MEASURINGTAPE,
     SHOVEL,
     COOKINGUTENSILS,
+    LADDER,
 
     // FARMER'S MARKET
     VEGETABLES,
@@ -41,6 +42,7 @@ public enum ItemName {
 
     // DONUT SHOP
     DONUTS,
+    GREENSMOOTHIE,
 
     // FASHION STORE
     CAP;
