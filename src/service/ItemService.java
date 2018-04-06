@@ -4,6 +4,7 @@ import model.*;
 
 
 import java.util.*;
+import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
 public class ItemService {
@@ -13,10 +14,6 @@ public class ItemService {
     public ItemService() {
         this.items = new HashMap<>();
         this.initializeItems();
-    }
-
-    public void processRequest(List<Item> requests) {
-
     }
 
     public Stream<Need> processItem(ItemName itemName) {
