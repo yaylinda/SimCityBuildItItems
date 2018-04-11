@@ -6,30 +6,66 @@ import service.ItemService;
 import java.util.Arrays;
 import java.util.List;
 import java.util.Map;
+import java.util.Scanner;
 import java.util.stream.Collectors;
 
 public class Runner {
 
+    private static ItemService itemService = new ItemService();
+
     public static void main(String[] args) {
 
-        ItemService itemService = new ItemService();
+        System.out.println("Mode options:");
+        System.out.println("1 - Request");
+        System.out.println("2 - Print All Items");
 
-        System.out.print("Request: ");
-        Arrays.stream(args).forEach(a -> System.out.print(a + " "));
+        Scanner sc = new Scanner(System.in);
+        int i = sc.nextInt();
 
-        System.out.println("\n");
+        switch (i) {
+            case 1:
+                handleRequests();
+                break;
+            case 2:
+                printAllItems();
+                break;
+            default:
+                break;
+        }
+    }
 
-        Map<Group, List<Need>> groupNeedsMap = Arrays.stream(args).flatMap(a -> {
+    private static void handleRequests() {
+        System.out.print("Enter Request: ");
+
+        Scanner sc = new Scanner(System.in);
+        String requestString = sc.nextLine();
+        String[] requestArray = requestString.split(" ");
+
+        Map<Group, List<Need>> groupNeedsMap = Arrays.stream(requestArray).flatMap(a -> {
             ItemName itemName = ItemName.valueOf(a.toUpperCase());
             return itemService.processItem(itemName);
         }).collect(Collectors.groupingBy(Need::getGroup));
 
+        printGroupNeedsMap(groupNeedsMap);
+    }
+
+    private static void printAllItems() {
+        System.out.println("Printing All Items: ");
+
+        Map<Group, List<Need>> groupNeedsMap = itemService.processAllItems()
+                .collect(Collectors.groupingBy(Need::getGroup));
+
+        printGroupNeedsMap(groupNeedsMap);
+    }
+
+    private static void printGroupNeedsMap(Map<Group, List<Need>> groupNeedsMap) {
         groupNeedsMap.forEach((g, nList) -> {
             System.out.println(g);
-            nList.stream().collect(Collectors.groupingBy(Need::getItemName, Collectors.counting())).forEach((i, c) -> {
-                System.out.println(String.format("\t%d %s", Math.toIntExact(c), i));
-            });
+            nList.stream().collect(Collectors.groupingBy(Need::getItemName, Collectors.counting())).forEach((i, c) ->
+                    System.out.println(String.format("\t%d %s", Math.toIntExact(c), i))
+            );
         });
     }
+
 
 }

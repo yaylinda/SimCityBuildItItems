@@ -20,6 +20,10 @@ public class ItemService {
         return items.get(itemName).getItemTree(0);
     }
 
+    public Stream<Need> processAllItems() {
+        return items.keySet().stream().flatMap(this::processItem);
+    }
+
     private void initializeItems() {
 
         // FACTORIES
