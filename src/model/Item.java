@@ -71,6 +71,10 @@ public class Item {
         );
     }
 
+    public double getTotalTime() {
+        return time  + ingredients.stream().mapToDouble(Item::getTotalTime).sum();
+    }
+
     @Override
     public String toString() {
         return "Item{" +

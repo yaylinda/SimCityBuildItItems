@@ -24,6 +24,10 @@ public class ItemService {
         return items.keySet().stream().flatMap(this::processItem);
     }
 
+    public double getTotalTime(ItemName itemName) {
+        return items.get(itemName).getTotalTime();
+    }
+
     private void initializeItems() {
 
         // FACTORIES

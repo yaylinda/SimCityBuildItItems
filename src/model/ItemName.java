@@ -1,6 +1,7 @@
 package model;
 
 public enum ItemName {
+
     // FACTORY ITEMS
     METAL,
     WOOD,
