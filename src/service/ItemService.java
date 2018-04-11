@@ -99,6 +99,14 @@ public class ItemService {
                 .setGroup(Group.FACTORY);
         this.items.put(ItemName.GLASS, glass);
 
+        Item animalFeed = new Item()
+                .setName(ItemName.GLASS)
+                .setTime(360)
+                .setSellPrice(140)
+                .setIngredients(Collections.emptyList())
+                .setGroup(Group.FACTORY);
+        this.items.put(ItemName.ANIMALFEED, animalFeed);
+
 
         // BUILDING SUPPLIES STORE
         Item nails = new Item()
@@ -195,7 +203,7 @@ public class ItemService {
         // FARMER'S MARKET
         Item vegetables = new Item()
                 .setName(ItemName.VEGETABLES)
-                .setTime(20)
+                .setTime(18)
                 .setSellPrice(160)
                 .setIngredients(Arrays.asList(seeds, seeds))
                 .setGroup(Group.FARMERS_MARKET);
@@ -203,11 +211,27 @@ public class ItemService {
 
         Item flourBag = new Item()
                 .setName(ItemName.FLOURBAG)
-                .setTime(30)
+                .setTime(27)
                 .setSellPrice(570)
                 .setIngredients(Arrays.asList(seeds, seeds, textiles, textiles))
                 .setGroup(Group.FARMERS_MARKET);
         this.items.put(ItemName.FLOURBAG, flourBag);
+
+        Item cream = new Item()
+                .setName(ItemName.CREAM)
+                .setTime(67)
+                .setSellPrice(440)
+                .setIngredients(Collections.singletonList(animalFeed))
+                .setGroup(Group.FARMERS_MARKET);
+        this.items.put(ItemName.CREAM, cream);
+
+        Item corn = new Item()
+                .setName(ItemName.CORN)
+                .setTime(54)
+                .setSellPrice(280)
+                .setIngredients(Arrays.asList(minerals, seeds, seeds, seeds, seeds))
+                .setGroup(Group.FARMERS_MARKET);
+        this.items.put(ItemName.CORN, corn);
 
 
         // FURNITURE STORE
@@ -227,6 +251,14 @@ public class ItemService {
                 .setGroup(Group.FURNITURE_STORE);
         this.items.put(ItemName.TABLES, tables);
 
+        Item homeTextiles = new Item()
+                .setName(ItemName.HOMETEXTILES)
+                .setTime(67)
+                .setSellPrice(610)
+                .setIngredients(Arrays.asList(textiles, textiles, measuringTape))
+                .setGroup(Group.FURNITURE_STORE);
+        this.items.put(ItemName.HOMETEXTILES, homeTextiles);
+
 
         // GARDENING SUPPLIES
         Item grass = new Item()
@@ -245,6 +277,14 @@ public class ItemService {
                 .setGroup(Group.GARDENING_SUPPLIES);
         this.items.put(ItemName.TREESAPLINGS, treeSapling);
 
+        Item gardenFurniture = new Item()
+                .setName(ItemName.GARDENFURNITURE)
+                .setTime(135)
+                .setSellPrice(820)
+                .setIngredients(Arrays.asList(planks, planks, plastic, plastic, textiles, textiles))
+                .setGroup(Group.GARDENING_SUPPLIES);
+        this.items.put(ItemName.GARDENFURNITURE, gardenFurniture);
+
 
         // DONUT SHOP
         Item donuts = new Item()
@@ -254,6 +294,14 @@ public class ItemService {
                 .setIngredients(Arrays.asList(flourBag, sugarAndSpices))
                 .setGroup(Group.DONUT_SHOP);
         this.items.put(ItemName.DONUTS, donuts);
+
+        Item breadRoll = new Item()
+                .setName(ItemName.BREADROLL)
+                .setTime(60)
+                .setSellPrice(1840)
+                .setIngredients(Arrays.asList(flourBag, flourBag, cream))
+                .setGroup(Group.DONUT_SHOP);
+        this.items.put(ItemName.BREADROLL, breadRoll);
 
 
         // FASHION STORE
@@ -265,11 +313,37 @@ public class ItemService {
                 .setGroup(Group.FASHION_STORE);
         this.items.put(ItemName.CAP, cap);
 
+        Item shoes = new Item()
+                .setName(ItemName.SHOES)
+                .setTime(75)
+                .setSellPrice(980)
+                .setIngredients(Arrays.asList(textiles, textiles, plastic, glue))
+                .setGroup(Group.FASHION_STORE);
+        this.items.put(ItemName.SHOES, shoes);
+
+        Item watch = new Item()
+                .setName(ItemName.WATCH)
+                .setTime(90)
+                .setSellPrice(580)
+                .setIngredients(Arrays.asList(plastic, plastic, glass, chemicals))
+                .setGroup(Group.FASHION_STORE);
+        this.items.put(ItemName.WATCH, watch);
+
+
+        // FAST FOOD RESTAURANT
+        Item iceCreamSandwich = new Item()
+                .setName(ItemName.ICECREAMSANDWICH)
+                .setTime(14)
+                .setSellPrice(2560)
+                .setIngredients(Arrays.asList(breadRoll, cream))
+                .setGroup(Group.FAST_FOOD_RESTAURANT);
+        this.items.put(ItemName.ICECREAMSANDWICH, iceCreamSandwich);
+
 
         // FARMER'S MARKET (2)
         Item fruitAndBerries = new Item()
                 .setName(ItemName.FRUITANDBERRIES)
-                .setTime(90)
+                .setTime(81)
                 .setSellPrice(730)
                 .setIngredients(Arrays.asList(seeds, seeds, treeSapling))
                 .setGroup(Group.FARMERS_MARKET);

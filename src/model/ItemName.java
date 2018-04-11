@@ -11,6 +11,7 @@ public enum ItemName {
     TEXTILES,
     SUGARANDSPICES,
     GLASS,
+    ANIMALFEED,
 
     // BUILDING SUPPLIES STORE
     NAILS,
@@ -31,19 +32,29 @@ public enum ItemName {
     VEGETABLES,
     FLOURBAG,
     FRUITANDBERRIES,
+    CREAM,
+    CORN,
 
     // FURNITURE STORE
     CHAIRS,
     TABLES,
+    HOMETEXTILES,
 
     // GARDENING SUPPLIES
     GRASS,
     TREESAPLINGS,
+    GARDENFURNITURE,
 
     // DONUT SHOP
     DONUTS,
     GREENSMOOTHIE,
+    BREADROLL,
 
     // FASHION STORE
-    CAP;
+    CAP,
+    SHOES,
+    WATCH,
+
+    // FAST FOOD RESTAURANT
+    ICECREAMSANDWICH;
 }
